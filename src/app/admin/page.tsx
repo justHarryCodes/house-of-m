@@ -60,7 +60,7 @@ export default function AdminOverviewPage() {
     <div className="px-4 py-5 space-y-5 max-w-md mx-auto">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <h1 className="text-[20px] font-bold text-white">Overview</h1>
-        <p className="text-[12px] text-[#6b7a87]">House of M command center</p>
+        <p className="text-[12px] text-[#6b7a87]">House of Mon command center</p>
       </motion.div>
 
       <div className="grid grid-cols-2 gap-3">

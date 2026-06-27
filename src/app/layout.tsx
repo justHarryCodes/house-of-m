@@ -10,12 +10,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "House of M",
+  title: "House of Mon",
   description: "The exclusive Web3 opportunity network for builders, creators, founders, and contributors.",
   manifest: "/manifest.json",
   icons: { icon: "/icon.png", apple: "/apple-icon.png" },
   openGraph: {
-    title: "House of M",
+    title: "House of Mon",
     description: "Exclusive Web3 members club",
     type: "website",
   },

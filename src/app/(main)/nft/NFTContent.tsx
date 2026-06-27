@@ -108,8 +108,8 @@ export default function NFTContent() {
   return (
     <div className="px-4 py-5 space-y-6 max-w-md mx-auto">
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        <h1 className="text-[20px] font-bold text-white">NFT Membership</h1>
-        <p className="text-[12px] text-[#6b7a87]">Your House of M identity tokens</p>
+        <h1 className="text-[20px] font-bold text-white">Beramon NFTs</h1>
+        <p className="text-[12px] text-[#6b7a87]">Your House of Mon identity tokens</p>
       </motion.div>
 
       {!isConnected ? (
@@ -179,7 +179,7 @@ export default function NFTContent() {
             ) : (
               <div className="space-y-3">
                 <p className="text-[12px] text-[#a8b4c0]">
-                  No House of M NFTs found in this wallet. Hold a membership NFT to unlock:
+                  No Beramon NFTs found in this wallet. Hold one to unlock:
                 </p>
                 {[
                   "Reputation score boosts",
@@ -199,7 +199,7 @@ export default function NFTContent() {
                   className="flex items-center gap-1.5 text-[12px] text-[#4a90d9] mt-2"
                 >
                   <ExternalLink size={12} />
-                  View Collection on OpenSea
+                  View Beramon Collection on OpenSea
                 </a>
               </div>
             )}

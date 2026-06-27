@@ -5,7 +5,7 @@ import { mainnet, polygon, base, arbitrum, optimism } from "wagmi/chains";
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID ?? "placeholder_not_used_server_side";
 
 export const wagmiConfig = getDefaultConfig({
-  appName: "House of M",
+  appName: "House of Mon",
   projectId,
   chains: [mainnet, polygon, base, arbitrum, optimism],
   ssr: false, // disable SSR — we guard with `mounted` in Web3Provider

@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Settings, ChevronLeft } from "lucide-react";
 
 const PAGE_TITLES: Record<string, string> = {
-  "/dashboard": "House of M",
+  "/dashboard": "House of Mon",
   "/reputation": "Reputation",
   "/governance": "Senate",
   "/missions": "Missions",
@@ -27,7 +27,7 @@ export function Header() {
   const pathname = usePathname();
   const { member } = useAuthStore();
 
-  const title = PAGE_TITLES[pathname] ?? PAGE_TITLES[`/${pathname.split("/")[1]}`] ?? "House of M";
+  const title = PAGE_TITLES[pathname] ?? PAGE_TITLES[`/${pathname.split("/")[1]}`] ?? "House of Mon";
   const isDashboard = pathname === "/dashboard";
   const showBack = !isDashboard && pathname !== "/";
 
@@ -77,7 +77,7 @@ export function Header() {
         {isDashboard && (
           <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5">
             <span className="text-[15px] font-bold tracking-widest text-gold-gradient uppercase">
-              House of M
+              House of Mon
             </span>
           </div>
         )}

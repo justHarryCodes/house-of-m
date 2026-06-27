@@ -115,7 +115,7 @@ export async function POST(req: NextRequest) {
         memberId,
         type: "join_bonus",
         points: 50,
-        description: "Welcome to House of M — join bonus",
+        description: "Welcome to House of Mon — join bonus",
         createdAt: Timestamp.now(),
       });
     } else {

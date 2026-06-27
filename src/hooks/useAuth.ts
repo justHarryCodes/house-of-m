@@ -22,13 +22,15 @@ export function useAuth() {
   } = useAuthStore();
 
   const authenticate = useCallback(async () => {
-    if (!initData && process.env.NODE_ENV !== "development") return;
-
     setLoading(true);
     setError(null);
 
     try {
-      const payload = initData || "mock_init_data";
+      const payload = initData || (process.env.NODE_ENV === "development" ? "mock_init_data" : "");
+
+      if (!payload) {
+        throw new Error("Open this app through Telegram to continue.");
+      }
 
       const res = await fetch("/api/auth/telegram", {
         method: "POST",

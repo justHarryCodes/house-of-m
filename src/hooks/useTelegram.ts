@@ -94,10 +94,12 @@ export function useTelegram() {
     tg.expand();
     setWebApp(tg);
 
+    // Always set initData — auth depends on it regardless of user presence
+    setInitData(tg.initData);
+
     const user = tg.initDataUnsafe?.user;
     if (user) {
       setTelegramUser(user);
-      setInitData(tg.initData);
     }
 
     setIsReady(true);

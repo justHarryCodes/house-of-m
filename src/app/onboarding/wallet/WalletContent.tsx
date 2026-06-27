@@ -25,7 +25,7 @@ export default function WalletContent() {
     setIsSaving(true);
     try {
       await signMessageAsync({
-        message: `House of M — Verify wallet ownership\nMember: ${member.memberId}\nAddress: ${address}\nTimestamp: ${Date.now()}`,
+        message: `House of Mon — Verify wallet ownership\nMember: ${member.memberId}\nAddress: ${address}\nTimestamp: ${Date.now()}`,
       });
       const res = await fetch(`/api/users/${member.memberId}`, {
         method: "PATCH",

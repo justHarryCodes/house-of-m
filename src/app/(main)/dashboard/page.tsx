@@ -263,7 +263,7 @@ export default function DashboardPage() {
         <div className="space-y-2">
           {[
             { href: "/reputation", icon: Shield, label: "Reputation History", desc: "View your full rep log" },
-            { href: "/nft", icon: Star, label: "NFT Membership", desc: "Your House of M NFTs" },
+            { href: "/nft", icon: Star, label: "Beramon NFTs", desc: "Your House of Mon NFTs" },
             { href: "/leaderboard", icon: Trophy, label: "Leaderboard", desc: "Top members ranking" },
           ].map(({ href, icon: Icon, label, desc }) => (
             <Link key={href} href={href} className="card-hom flex items-center gap-3 p-3.5 hover:border-[#c9a84c]/20 transition-all duration-200 group">

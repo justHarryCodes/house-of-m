@@ -69,7 +69,7 @@ export default function OnboardingPage() {
               backgroundClip: "text",
             }}
           >
-            House of M
+            House of Mon
           </h1>
           <p className="text-[13px] text-[#a8b4c0] max-w-xs leading-relaxed mt-2">
             The exclusive Web3 opportunity network for builders, creators, and contributors.
