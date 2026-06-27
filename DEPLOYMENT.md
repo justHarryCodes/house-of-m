@@ -1,4 +1,4 @@
-# House of M — Deployment Guide
+# House of Mon — Deployment Guide
 
 ## Prerequisites
 
@@ -91,7 +91,7 @@ service cloud.firestore {
 
 ### Enable Web App
 1. Send `/newapp` to BotFather
-2. Name it **House of M**
+2. Name it **House of Mon**
 3. Set the URL to your Vercel deployment URL
 4. The bot will generate a short link like `t.me/YourBot/app`
 
