@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# House of Mon
 
-## Getting Started
+**The exclusive Web3 opportunity network for builders, creators, founders and contributors.**
 
-First, run the development server:
+House of Mon is a community platform that runs as a Telegram Mini App. Members complete missions, earn reputation and rewards, vote on proposals, RSVP to events and hold membership NFTs. Admins run everything from a built-in back office.
+
+## Features
+
+**Members**
+- Sign in instantly through Telegram, then link a wallet (RainbowKit)
+- **Missions:** complete quests and submit proof for review
+- **Reputation and leaderboard:** earn points for contributions and climb the rankings
+- **Rewards:** claim rewards unlocked by reputation
+- **Governance:** create and vote on community proposals
+- **Events:** browse and RSVP
+- **NFTs:** view membership NFTs
+- **Community moderation:** report violations and vote on them
+- Notifications and profile settings
+
+**Admins (`/admin`)**
+- Manage members, quests (including reviewing submissions), rewards, events, proposals and violations
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js (App Router), React, TypeScript |
+| Platform | Telegram Mini Apps SDK |
+| Wallets | wagmi, viem, RainbowKit |
+| Backend | Firebase (Firestore, Admin SDK) |
+| UI | Tailwind CSS, shadcn/ui, Framer Motion, Sonner |
+| State | Zustand |
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/justHarryCodes/house-of-m.git
+cd house-of-m
+npm install
+# create .env.local (see below)
+npm run dev          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To test inside Telegram, expose your dev server over HTTPS (for example with ngrok) and set it as your bot's Web App URL.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The full guide, covering Firebase, the Telegram bot, WalletConnect, Vercel, the first admin and a post-deploy checklist, is in **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+| Group | Variables |
+|---|---|
+| Telegram | `TELEGRAM_BOT_TOKEN`, used server-side to verify Telegram login data |
+| WalletConnect | `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` |
+| Firebase client | `NEXT_PUBLIC_FIREBASE_*` |
+| Firebase Admin | `FIREBASE_ADMIN_PROJECT_ID`, `FIREBASE_ADMIN_CLIENT_EMAIL`, `FIREBASE_ADMIN_PRIVATE_KEY` |
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── (main)/        # dashboard, missions, rewards, reputation, leaderboard,
+│   │                  # governance, events, nft, violations, notifications, profile, settings
+│   ├── admin/         # Back office
+│   ├── onboarding/    # Telegram sign-in and wallet linking
+│   └── api/           # auth/telegram, quests, rewards, proposals, events, violations, …
+├── components/  hooks/  lib/  store/  types/
+docs/DEPLOYMENT.md     # Setup and deployment guide
+```
